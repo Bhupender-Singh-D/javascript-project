@@ -1,0 +1,1 @@
+export default [{ ignores: ["javascript-project.zip"], files: ["js/**/*.js", "tests/**/*.js"], languageOptions: { ecmaVersion: "latest", sourceType: "module", globals: { document: "readonly", fetch: "readonly", console: "readonly" } }, rules: { "no-undef": "error", "no-unused-vars": ["error", { argsIgnorePattern: "^_" }] } }];

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Interactive vanilla JavaScript games and API examples." />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>JavaScript Playground</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="page-shell header-content">
+        <div><p class="eyebrow">Vanilla JavaScript</p><h1>JavaScript Playground</h1></div>
+        <button id="theme-toggle" class="secondary-button" type="button" aria-pressed="false">Use dark mode</button>
+      </div>
+    </header>
+    <main class="page-shell">
+      <section class="panel" aria-labelledby="dom-title">
+        <h2 id="dom-title">DOM and events</h2>
+        <p id="date-output" class="status" aria-live="polite">Choose “Show current date” to display the time.</p>
+        <div class="button-row"><button id="show-date" type="button">Show current date</button><button id="dom-action" class="secondary-button" type="button">Update examples</button></div>
+        <div class="example-boxes" aria-live="polite"><div class="box">First example</div><div class="box">Second example</div><div class="box">Third example</div></div>
+      </section>
+
+      <section class="panel" aria-labelledby="tic-tac-toe-title">
+        <div class="section-heading"><div><h2 id="tic-tac-toe-title">Tic-Tac-Toe</h2><p>Player X starts every new game.</p></div><button id="reset-game" class="secondary-button" type="button">Reset game</button></div>
+        <div id="tic-tac-status" class="game-status" role="status" aria-live="polite">Player X’s turn.</div>
+        <div id="tic-tac-board" class="tic-tac-board" role="grid" aria-label="Tic-Tac-Toe board"></div>
+        <button id="new-game" class="secondary-button" type="button">New game</button>
+      </section>
+
+      <section class="panel" aria-labelledby="rps-title">
+        <h2 id="rps-title">Rock, Paper, Scissors</h2>
+        <p id="rps-status" class="game-status" role="status" aria-live="polite">Choose your move.</p>
+        <div class="choice-grid" role="group" aria-label="Choose your move"><button class="choice" type="button" data-choice="rock" aria-label="Choose rock">✊<span>Rock</span></button><button class="choice" type="button" data-choice="paper" aria-label="Choose paper">✋<span>Paper</span></button><button class="choice" type="button" data-choice="scissors" aria-label="Choose scissors">✌️<span>Scissors</span></button></div>
+        <dl class="score-board"><div><dt>You</dt><dd id="user-score">0</dd></div><div><dt>Computer</dt><dd id="computer-score">0</dd></div></dl>
+      </section>
+
+      <section class="panel" aria-labelledby="facts-title"><h2 id="facts-title">Cat facts</h2><p id="fact-output" class="status" role="status" aria-live="polite">Get a fact to begin.</p><button id="facts-button" type="button">Get a fact</button></section>
+
+      <section class="panel converter" aria-labelledby="converter-title">
+        <h2 id="converter-title">Currency converter</h2>
+        <form id="currency-form" novalidate>
+          <label for="amount">Amount</label><input id="amount" name="amount" type="number" min="0.01" step="0.01" value="100" inputmode="decimal" required />
+          <div class="currency-selects"><div><label for="from-currency">From</label><div class="select-control"><img id="from-flag" src="https://flagsapi.com/US/flat/64.png" alt="United States flag" /><select id="from-currency" name="from"></select></div></div><i class="fa-solid fa-arrow-right-arrow-left" aria-hidden="true"></i><div><label for="to-currency">To</label><div class="select-control"><img id="to-flag" src="https://flagsapi.com/IN/flat/64.png" alt="India flag" /><select id="to-currency" name="to"></select></div></div></div>
+          <p id="currency-status" class="status" role="status" aria-live="polite">Choose currencies and get an exchange rate.</p>
+          <button id="currency-button" type="submit">Get exchange rate</button>
+        </form>
+      </section>
+    </main>
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>
